@@ -22,6 +22,11 @@ program
   .action(require('./actions/save'));
 
 program
+  .command('import <file>')
+  .description('import data from json file')
+  .action(require('./actions/import'));
+
+program
   .command('taxes <estimate>')
   .description('set tax estimate')
   .action(require('./actions/taxes'));
