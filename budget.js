@@ -19,7 +19,7 @@ program
   .command('save')
   .option('-f --file [path]', 'filename to save [budget]', 'budget')
   .description('save budget to file')
-  .action(require('./actions/print'));
+  .action(require('./actions/save'));
 
 program
   .command('taxes <estimate>')
