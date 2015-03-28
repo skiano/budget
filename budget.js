@@ -28,6 +28,7 @@ program
 
 program
   .command('create <account> <value>')
+  .option('-u --update', 'force update')
   .description('create an account')
   .action(require('./actions/create'));
 

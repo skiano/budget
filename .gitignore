@@ -3,4 +3,4 @@ logs
 lib-cov
 coverage
 node_modules
-output.txt
+output/
