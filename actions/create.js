@@ -2,6 +2,10 @@
 var author = require('../lib/author');
 
 module.exports = function createAccount(name, cost, options) {
+  if(name.toUpperCase() === 'ALL') {
+    throw new Error('ALL is a reserved word');
+  }
+
   var budget = author.read();
 
   var account = {
