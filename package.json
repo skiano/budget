@@ -1,0 +1,22 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "paperwork oh my!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r should"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skiano/budget.git"
+  },
+  "author": "Greg Skiano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skiano/budget/issues"
+  },
+  "homepage": "https://github.com/skiano/budget",
+  "dependencies": {
+    "text-table": "^0.2.0"
+  }
+}
