@@ -1,6 +1,7 @@
 
 var addComputedValues = require('./lib/addComputedValues'),
-  formatBudget = require('./lib/formatBudget');
+  formatBudget = require('./lib/formatBudget'),
+  author = require('./lib/author');
 
 var accounts = [
   {
@@ -25,13 +26,16 @@ var accounts = [
   }
 ];
 
+var budget = author.read();
 
+author.write(budget);
+// console.log(budget);
 
-module.exports = function () {
-  var output = formatBudget(addComputedValues({
-    taxEstimate: 0.3,
-    accounts: accounts
-  }));
-  console.log(output);
-}
+// module.exports = function () {
+//   var output = formatBudget(addComputedValues({
+//     taxEstimate: 0.3,
+//     accounts: accounts
+//   }));
+//   console.log(output);
+// }
 

@@ -4,8 +4,7 @@
  * Module dependencies.
  */
  
-var program = require('commander'),
-  printBudget = require('./index');
+var program = require('commander');
 
 program
   .version('0.0.1')
@@ -14,29 +13,28 @@ program
 program
   .command('print')
   .description('display budget')
-  .action(printBudget);
+  .action(require('./actions/print'));
 
 program
   .command('save')
   .option('-f --file [path]', 'filename to save [budget]', 'budget')
   .description('save budget to file')
-  .action(function (options) {
-    console.log(options.file);
-  });
+  .action(require('./actions/print'));
+
+program
+  .command('taxes <estimate>')
+  .description('set tax estimate')
+  .action(require('./actions/taxes'));
 
 program
   .command('create <account> <value>')
   .description('create an account')
-  .action(function (account, amount) {
-    console.log(account, amount);
-  });
+  .action(require('./actions/create'));
 
 program
   .command('delete <account>')
   .description('delete an account')
-  .action(function (account) {
-    console.log(account);
-  });
+  .action(require('./actions/delete'));
 
 program.parse(process.argv);
 
@@ -44,8 +42,3 @@ if (!process.argv.slice(2).length) {
   program.outputHelp();
 }
  
-// console.log('you ordered a pizza with:');
-// if (program.peppers) console.log('  - peppers');
-// if (program.pineapple) console.log('  - pineapple');
-// if (program.bbq) console.log('  - bbq');
-// console.log('  - %s cheese', program.cheese);
