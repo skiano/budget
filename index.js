@@ -18,12 +18,20 @@ var accounts = [
   {
     name: 'sailing',
     cost: 200
+  },
+  {
+    name: 'food',
+    cost: 2200
   }
 ];
 
-output = formatBudget(addComputedValues({
-  taxEstimate: 0.3,
-  accounts: accounts
-}));
 
-console.log(output);
+
+module.exports = function () {
+  var output = formatBudget(addComputedValues({
+    taxEstimate: 0.3,
+    accounts: accounts
+  }));
+  console.log(output);
+}
+
