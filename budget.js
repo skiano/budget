@@ -27,14 +27,14 @@ program
   .action(require('./actions/taxes'));
 
 program
-  .command('create <account> <value>')
+  .command('create <name> <value>')
   .option('-u --update', 'force update')
   .description('create an account')
   .action(require('./actions/create'));
 
 program
   .command('delete <account>')
-  .description('delete an account')
+  .description('delete an account (ALL deletes every account)')
   .action(require('./actions/delete'));
 
 program.parse(process.argv);
