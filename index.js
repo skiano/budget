@@ -1,5 +1,6 @@
 
-var formatBudget = require('./lib/formatBudget');
+var addComputedValues = require('./lib/addComputedValues'),
+  formatBudget = require('./lib/formatBudget');
 
 var accounts = [
   {
@@ -20,9 +21,9 @@ var accounts = [
   }
 ];
 
-output = formatBudget({
-  taxes: 0.3,
+output = formatBudget(addComputedValues({
+  taxEstimate: 0.3,
   accounts: accounts
-});
+}));
 
 console.log(output);
